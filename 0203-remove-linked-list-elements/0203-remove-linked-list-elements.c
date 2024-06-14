@@ -6,15 +6,15 @@
  * };
  */
 struct ListNode* removeElements(struct ListNode* head, int val) {
-    struct ListNode *dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
+    typedef struct ListNode ListNode;
+    ListNode *dummy = (ListNode*)malloc(sizeof(ListNode));
     dummy->next = head;
-    struct ListNode *current = head;
+    ListNode *current = head;
     while (current != NULL) {
         if (current->val == val) {
             if (current == head) {
                 head = current->next;
             }
-
             dummy->next = current->next;
             current = current->next;
         } else {
