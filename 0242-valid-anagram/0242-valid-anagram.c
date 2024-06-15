@@ -4,12 +4,7 @@ bool isAnagram(char* s, char* t) {
         return false;
     }
 
-    int map1[26], map2[26];
-    for (int i = 0; i < 26; i++) {
-        map1[i] = 0;
-        map2[i] = 0;
-    }
-
+    int map1[26] = {0}, map2[26] = {0};
     for (int i = 0; i < len1; i++) {
         int c1 = (int)(s[i] - 'a');
         int c2 = (int)(t[i] - 'a');
