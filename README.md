@@ -11,3 +11,4 @@ LeetCode question-solving strategy: 200 classic questions in order. https://gith
 - 28\. Find the Index of the First Occurrence in a String
 - 459\. Repeated Substring Pattern
 - 239\. Sliding Window Maximum
+- 347\. Top K Frequent Elements
