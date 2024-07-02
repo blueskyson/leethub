@@ -11,9 +11,9 @@
  */
 class Solution {
 public:
-    int getMaxIndex(const vector<int>& nums) {
+    int getMaxIndex(const vector<int>& nums, int left, int right) {
         int max = INT32_MIN, maxIndex = -1;
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = left; i < right; i++) {
             if (nums[i] > max) {
                 max = nums[i];
                 maxIndex = i;
@@ -22,22 +22,20 @@ public:
         return maxIndex;
     }
 
-    TreeNode* traverse(vector<int>& nums) {
-        if (nums.empty())
+    TreeNode* traverse(vector<int>& nums, int left, int right) {
+        if (right - left == 0)
             return nullptr;
-        if (nums.size() == 1)
-            return new TreeNode(nums[0]);
+        if (right - left == 1)
+            return new TreeNode(nums[left]);
 
-        int maxIndex = getMaxIndex(nums);
+        int maxIndex = getMaxIndex(nums, left, right);
         TreeNode *root = new TreeNode(nums[maxIndex]);
-        vector<int> leftNums(nums.begin(), nums.begin() + maxIndex);
-        vector<int> rightNums(nums.begin() + maxIndex + 1, nums.end());
-        root->left = traverse(leftNums);
-        root->right = traverse(rightNums);
+        root->left = traverse(nums, left, maxIndex);
+        root->right = traverse(nums, maxIndex + 1, right);
         return root;
     }
 
     TreeNode* constructMaximumBinaryTree(vector<int>& nums) {
-        return traverse(nums);
+        return traverse(nums, 0, nums.size());
     }
 };
