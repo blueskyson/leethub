@@ -12,3 +12,4 @@ LeetCode question-solving strategy: 200 classic questions in order. https://gith
 - 459\. Repeated Substring Pattern
 - 239\. Sliding Window Maximum
 - 347\. Top K Frequent Elements
+- 106\. Construct Binary Tree from Inorder and Postorder Traversal
