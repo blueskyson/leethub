@@ -13,3 +13,4 @@ LeetCode question-solving strategy: 200 classic questions in order. https://gith
 - 239\. Sliding Window Maximum
 - 347\. Top K Frequent Elements
 - 106\. Construct Binary Tree from Inorder and Postorder Traversal
+- 236\. Lowest Common Ancestor of a Binary Tree
