@@ -11,33 +11,19 @@
  */
 class Solution {
 public:
-    int traverse(TreeNode *node, int lastSum) {
+    void traverse(TreeNode *node, int& previousVal) {
         if (node == nullptr) {
-            return 0;
+            return;
         }
         
-        if (node->left == nullptr && node->right == nullptr) {
-            node->val = node->val + lastSum;
-            return node->val;
-        }
-        
-        if (node->left != nullptr && node->right == nullptr) {
-            node->val = node->val + lastSum;
-            return traverse(node->left, node->val);
-        }
-        
-        if (node->left == nullptr && node->right != nullptr) {
-            int rightResult = traverse(node->right, lastSum);
-            node->val += rightResult;
-            return node->val;
-        }
-        
-        int rightResult = traverse(node->right, lastSum);
-        node->val += rightResult;
-        return traverse(node->left, node->val);
+        traverse(node->right, previousVal);
+        node->val += previousVal;
+        previousVal = node->val;
+        traverse(node->left, previousVal);
     }
     TreeNode* convertBST(TreeNode* root) {
-        traverse(root, 0);
+        int previousVal = 0;
+        traverse(root, previousVal);
         return root;
     }
 };
