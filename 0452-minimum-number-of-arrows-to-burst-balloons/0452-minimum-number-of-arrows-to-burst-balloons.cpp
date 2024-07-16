@@ -1,7 +1,7 @@
 class Solution {
 public:
     static bool cmp(vector<int> a, vector<int> b) {
-        return a[0] > b[0];
+        return a[0] < b[0];
     }
     int findMinArrowShots(vector<vector<int>>& points) {
         if (points.size() == 1) {
