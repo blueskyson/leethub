@@ -37,3 +37,4 @@ Greedy
 - 452\. Minimum Number of Arrows to Burst Balloons
 - 435\. Non-overlapping Intervals
 - 763\. Partition Labels
+- 738\. Monotone Increasing Digits
