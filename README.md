@@ -39,3 +39,6 @@ Greedy
 - 763\. Partition Labels
 - 738\. Monotone Increasing Digits
 - 968\. Binary Tree Cameras
+
+Dynamic Programming
+- 343\. Integer Break
