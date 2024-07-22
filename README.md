@@ -42,3 +42,4 @@ Greedy
 
 Dynamic Programming
 - 343\. Integer Break
+- 96\. Unique Binary Search Trees
