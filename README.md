@@ -51,3 +51,4 @@ Dynamic Programming
 - 337\. House Robber III
 - 300\. Longest Increasing Subsequence
 - 718\. Maximum Length of Repeated Subarray
+- 1143\. Longest Common Subsequence
