@@ -52,3 +52,6 @@ Dynamic Programming
 - 300\. Longest Increasing Subsequence
 - 718\. Maximum Length of Repeated Subarray
 - 1143\. Longest Common Subsequence
+
+Monotonic Stack
+- 739\. Daily Temperatures
