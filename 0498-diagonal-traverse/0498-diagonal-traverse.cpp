@@ -11,7 +11,7 @@ public:
                 int x = xStart, y = yStart;
                 while (1) {
                     result.push_back(mat[y][x]);
-                    cout << mat[y][x] << " ";
+                    // cout << mat[y][x] << " ";
                     if (y == 0 && x < width - 1) {
                         xStart = x + 1;
                         yStart = y;
@@ -31,7 +31,7 @@ public:
                 int x = xStart, y = yStart;
                 while (1) {
                     result.push_back(mat[y][x]);
-                    cout << mat[y][x] << " ";
+                    // cout << mat[y][x] << " ";
                     if (x == 0 && y < height - 1) {
                         xStart = x;
                         yStart = y + 1;
@@ -49,7 +49,7 @@ public:
                 }
             }
             
-            cout << endl;
+            // cout << endl;
             i++;
         }
         
