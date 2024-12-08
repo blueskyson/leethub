@@ -1,30 +1,36 @@
 class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
-        vector<bool> dp(s.size() + 1, false);
-        dp[0] = true;
-        for (int i = 0; i <= s.size(); i++) {
-            if (dp[i] == false) {
+        vector<bool> dp(s.size(), false);
+        for (int i = 0; i < s.size(); i++) {
+            if (i > 0 && dp[i - 1] != true) {
                 continue;
             }
+            
+            for (string word : wordDict) {
+                if (i + word.size() > s.size()) {
+                    continue;
+                }
 
-            for (string w : wordDict) {
-                if (w.size() <= s.size() - i) {
-                    bool sameStr = true;
-                    for (int j = 0; j < w.size(); j++) {
-                        if (w[j] != s[i + j]) {
-                            sameStr = false;
-                            break;
-                        }
+                bool isSame = true;
+                for (int j = 0; j < word.size(); j++) {
+                    if (s[i + j] != word[j]) {
+                        isSame = false;
+                        break;
                     }
-                    
-                    if (dp[i + w.size()] == false && sameStr == true) {
-                        dp[i + w.size()] = true;
-                    }
+                }
+                
+                if (isSame) {
+                    dp[i + word.size() - 1] = true;
                 }
             }
         }
         
-        return dp[s.size()];
+        // for (int i = 0; i < dp.size(); i++) {
+        //     cout << dp[i] << " ";
+        // }
+        // cout << endl;
+        
+        return dp[s.size() - 1];
     }
 };
