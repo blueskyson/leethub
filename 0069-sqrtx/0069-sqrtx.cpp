@@ -8,7 +8,6 @@ public:
         while (right > left) {
             long long int mid = left + (right - left) / 2;
             long long int prod = mid * mid;
-            cout << left << " " << mid << " "<< right << endl;
             if (prod > x) {
                 right = mid - 1;
             } else if (prod < x) {
