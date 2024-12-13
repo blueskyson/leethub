@@ -55,10 +55,10 @@ public:
 
         long long res = 0;
         for (int i = 0; i < N; ++i) {
-            res += ((prefix_sum[right[i] + 1] - prefix_sum[i + 1]) * (i - left[i]) % MOD + 
-                    MOD * 2 - 
-                   (prefix_sum[i + 1] - prefix_sum[left[i] + 1]) * (right[i] - i) % MOD) % MOD * st[i] % MOD;
-            res %= MOD;
+            long long positive_part = (prefix_sum[right[i] + 1] - prefix_sum[i + 1]) * (i - left[i]) % MOD;
+            long long negative_part = (prefix_sum[i + 1] - prefix_sum[left[i] + 1]) * (right[i] - i) % MOD;
+            long long all_range_sum = (positive_part + 2 * MOD - negative_part) % MOD;
+            res = (res + all_range_sum * st[i] % MOD) % MOD;
         }
         return (int) res;
     }
